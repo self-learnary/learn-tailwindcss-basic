@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/min.css">
+    <script defer src="js/min.js"></script>
+</head>
+<body class="antialiased font-sans bg-gray-100 text-gray-400">
+    
+    <div x-data="{ open: false }">
+        <div class="bg-gray-900">
+            <div class="flex justify-between px-6 py-4">
+                <a href="#" class="text-lg font-medium text-white">Askly</a>
+                <button x-on:click="open = !open" class="text-white">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path :class="{ 'hidden': open === false }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{ 'hidden': open === true }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                </button>
+            </div>
+        </div>
+    
+        <div :class="! open ? 'hidden' : ''" class="lg:flex flex-col lg:flex-row lg:items-center justify-between bg-gray-900 text-sm py-4 border-t border-gray-800">
+            <div class="flex flex-col lg:flex-row lg:items-center">
+                <a href="#" class="block py-2 px-6 text-gray-300 hover:text-white">Home</a>
+                <a href="#" class="block py-2 px-6 text-gray-300 hover:text-white">About</a>
+                <a href="#" class="block py-2 px-6 text-gray-300 hover:text-white">Contact</a>
+            </div>
+            <div class="flex flex-col lg:flex-row lg:items-center">
+                <a href="#" class="block py-2 px-6 text-gray-300 hover:text-white">Login</a>
+                <a href="#" class="block py-2 px-6 text-gray-300 hover:text-white">Register</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
